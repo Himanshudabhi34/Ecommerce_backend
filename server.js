@@ -1,5 +1,5 @@
 import express from "express";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import cors from 'cors';
 import bodyParser from "body-parser";
 import Router from './src/routes/UserRoutes.js'
@@ -9,7 +9,9 @@ dotenv.config();
 
 // General setup
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
+
+console.log(port , ":port")
 
 app.use(cors());
 app.use(
